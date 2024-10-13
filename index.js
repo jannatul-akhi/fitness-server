@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const uri =
-  "mongodb+srv://fitness:ySz8rCPEm899X26q@cluster0.yqngda3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://fitness:8rNDSWWNdQqpYsih@cluster0.9bycbcd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -23,7 +23,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    const usersCollection = client.db("parlour").collection("usersDB");
+    const usersCollection = client.db("fitnessDB").collection("usersDB");
 
     // create user (register)
     app.post("/user-register", async (req, res) => {
