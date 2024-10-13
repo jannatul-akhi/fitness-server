@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// database connection
 const uri =
   "mongodb+srv://fitness:8rNDSWWNdQqpYsih@cluster0.9bycbcd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -19,6 +20,7 @@ const client = new MongoClient(uri, {
     deprecationErrors: true,
   },
 });
+
 
 async function run() {
   try {
